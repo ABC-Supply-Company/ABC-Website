@@ -64,16 +64,3 @@ body {
   width:100%;
   margin-bottom: 60px;
 }
-
-
-
-
-
-.jumbotron {
-    margin-top: 0px;
-    background-image: url('images/1.jpg');
-    /*opacity: 0.5;*/
-    border-radius: 0.3rem;
-    color: #012b15 !important; /*#012b15*/
-}
-

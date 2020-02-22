@@ -1,0 +1,46 @@
+/*
+BootstrapCreative
+Created by: Jacob Lett
+Licensed MIT
+2017
+
+1 rem    = 16px
+.75 rem  = 12px
+.5 rem   = 8px
+.25 rem  = 4px
+
+Bootstrap 4 breakpoints
+@media (min-width: 576px) { }
+@media (min-width: 768px) { }
+@media (min-width: 992px) { }
+@media (min-width: 1200px) { }
+
+Colors
+#0275d8 - primary blue
+#636c72 - light gray
+#292b2c - black
+*/
+
+
+/*
+####################################################
+G R I D  &  T Y P E
+####################################################
+*/
+
+/**/
+body {
+  background: #e2e2e2;
+}
+
+/* Set a display font for headings and quotes */
+h1, h2, h3, h4, h5,
+.navbar-brand, blockquote p,
+.display-1, .display-2, .display-3, .display-4 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+
+form {
+  color:#6c757d;
+}

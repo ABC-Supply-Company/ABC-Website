@@ -2,18 +2,248 @@
 @{
     ViewData["Title"] = "Contact Us - ABC Supply Company";
 }
+
+
+<h1 style="text-align:center;">Contact Us</h1>
+<div class="row">
     
-        <div class="jumbotron" style="text-align:center">
-            <h1>Contact Us</h1>
+    <div class="col-xl-4 ">
+        <div class="card bg-transparent card-body">
+            <h5>Contact Info:</h5>
+            <address>
+                One ABC Supply Way<br />
+                Boston, MA 02101<br />
+                <abbr title="Phone">Phone:</abbr>
+                765.555.0100
+            </address>
+
+            <address>
+                <strong>Email US:</strong>   <a href="mailto:Support@abcsupply.net">Support@abcsupply.net</a><br />
+            </address>
         </div>
+    </div>
 
-        <address>
-            One ABC Supply Way<br />
-            Boston, MA 02101<br />
-            <abbr title="Phone">P:</abbr>
-            425.555.0100
-        </address>
+    <div class="col-xl-8 float-right">
+        <div class="card bg-transparent card-body" >
+            <h5>ABC Supply Co Headquarters</h5>
+            <!--The div element for the map -->
+            <div id="map">
+            </div>
+        </div>
+    </div>
 
-        <address>
-            <strong>Email US:</strong>   <a href="mailto:Support@abcsupply.net">Support@abcsupply.net</a><br />
-        </address>
+</div>
+
+
+
+
+
+
+
+<div class="row h-100 justify-content-md-center align-top " style="text-align:left;">
+    <div class="h-100 col-md-12 card p-5 m-2 shadow-lg">
+
+        <!--
+        ####################################################
+        F O R M
+        ####################################################
+        -->
+        <!-- simple php form script for functionality - https://css-tricks.com/nice-and-simple-contact-form/ -->
+        <form data-toggle="validator" class="bg-transparent">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="first" class="font-weight-bold">First Name</label>
+                        <input type="text" class="form-control" id="first" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="font-weight-bold">Email address</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="email-help" placeholder="Enter email" data-error="This field is required" required>
+                        <small id="email-help" class="form-text text-muted">No Spam.</small>
+                        <div class="form-control-feedback help-block with-errors has-danger"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="company" class="font-weight-bold">Company Name</label>
+                        <input type="text" class="form-control" id="company">
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="last" class="font-weight-bold">Last Name</label>
+                        <input type="text" class="form-control" id="last" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="font-weight-bold">Phone</label>
+                        <input type="text" class="form-control" id="phone" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <br />
+                        <label for="website" class="font-weight-bold">Website</label>
+                        <input type="url" class="form-control" id="website" placeholder="http://">
+                        <small id="email-help" class="form-text text-muted"></small>
+                        <div class="form-control-feedback help-block with-errors has-danger"></div>
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+            <div class="form-group">
+                <label for="project" class="font-weight-bold">Please explain your project</label>
+                <textarea class="form-control" id="project" rows="3"></textarea>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="budget" class="font-weight-bold">What is your budget range?</label>
+                        <select class="custom-select w-100" id="budget">
+                            <option selected>Choose</option>
+                            <option value="500-1000">$500 - $1000</option>
+                            <option value="1000-2000">$1000 - $2000</option>
+                            <option value="2000-5000">$2000 - $5000</option>
+                            <option value="5000+">$5000+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="timeline" class="font-weight-bold">What is your timeline?</label>
+                        <select class="custom-select w-100" id="timeline">
+                            <option selected>Choose</option>
+                            <option value="2 weeks">2 weeks</option>
+                            <option value="1 month">1 month</option>
+                            <option value="2-3 months">2 - 3 months</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <fieldset class="form-group">
+                <legend>Do you need help with the following?</legend>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="custom-controls-stacked">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="BuyingSurplusPlastics">
+                                <label class="custom-control-label" for="Buying SurplusPlastics">Buying Surplus Plastics </label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="SellingSurplusPlastics">
+                                <label class="custom-control-label" for="SellingSurplusPlastics">Selling Surplus Plastics </label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="WarehousingYourSurplusInventory">
+                                <label class="custom-control-label" for="WarehousingYourSurplusInventory">Warehousing Your Surplus Inventory</label>
+                            </div>
+                        </div>
+                        <!-- /.custom-controls-stacked -->
+                    </div>
+                    <!-- /.col-sm-6 -->
+                    <div class="col-sm-6">
+                        <div class="custom-controls-stacked">
+
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="PlasticsRecycling">
+                                <label class="custom-control-label" for="PlasticsRecycling">Plastics Recycling Services</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="DistributionServices">
+                                <label class="custom-control-label" for="DistributionServices">Distribution Services</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="NotSure">
+                                <label class="custom-control-label" for="NotSure">Not sure, help me choose</label>
+                            </div>
+                        </div>
+                        <!-- /.custom-controls-stacked -->
+                    </div>
+                    <!-- /.col-sm-6 -->
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <p class="font-weight-bold">Attach your RFP or NDA <small>if applicable</small></p>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+
+
+                <small id="fileHelp" class="form-text text-muted">.zip for multiple files</small>
+            </div>
+
+            <div class="form-group">
+                <span class="font-weight-bold">Would you like to receive our newsletter?</span>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="newsletter" checked>
+                    <label class="custom-control-label" for="newsletter">Receive newsletter</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-outline-dark btn-light">Send Form</button>
+        </form>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.col -->
+@*</div>*@
+<!-- /.container -->
+<!--
+####################################################
+J A V A S C R I P T - jquery, bootstrap, plugins
+Placed at the end of the document so the pages load faster
+####################################################
+-->
+<!-- jQuery - Grab from a CDN and if not available grab a local copy -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.slim.min.js"><\/script>')
+</script>
+
+<!-- Form validation possibilily - https://github.com/1000hz/bootstrap-validator/issues/495 -->
+@*Bootstrap core JS
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>*@
+
+
+<!-- Custom Javascript -->
+<script src="js/form.js"></script>
+
+<!-- Defer scripts that are not critical to the initial page load. -->
+<script type="text/javascript">
+    function downloadJSAtOnload() {
+        var element = document.createElement("script");
+        // Your scripts would go inside this defer.js
+        // Use case would be "enhancements" like animations, share buttons, etc.
+        element.src = "/js/defer.js";
+        document.body.appendChild(element);
+    }
+    if (window.addEventListener)
+        window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+        window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+</script>
+<!-- Google Maps API code goes here -->
+<script>
+    // Initialize and add the map
+    function initMap() {
+        // The location of Uluru
+        var boston = { lat: 42.361145, lng: -71.057083 };
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), { zoom: 10, center: boston });
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({ position: boston, map: map });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz92yaTbQzBP2E3Gz15xmQqL-xlsV5gkw&callback=initMap">
+</script>
+
+<!-- Google Analytics code goes here if needed -->
