@@ -54,18 +54,26 @@ button.accept-policy {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
+
   position: relative;
   min-height: 100%;
 }
 
 body {
   /* Margin bottom by footer height */
+  width:100%;
   margin-bottom: 60px;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+
+
+
+
+
+.jumbotron {
+    margin-top: 0px;
+    background-image: url('images/1.jpg');
+    /*opacity: 0.5;*/
+    border-radius: 0.3rem;
+    color: #012b15 !important; /*#012b15*/
 }
+

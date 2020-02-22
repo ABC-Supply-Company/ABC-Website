@@ -7,8 +7,8 @@
       "sslPort": 0
     },
     "iisExpress": {
-      "applicationUrl": "http://localhost:60339",
-      "sslPort": 44341
+      "applicationUrl": "http://localhost:44341",
+      "sslPort": 44370
     }
   },
   "profiles": {
