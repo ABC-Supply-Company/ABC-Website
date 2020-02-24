@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
 using ABCSupplyCompany.Models;
 
 namespace ABCSupplyCompany.Controllers
@@ -38,8 +39,13 @@ namespace ABCSupplyCompany.Controllers
             return View();
         }
 
+
+        [Route("api/inventory")]
+        [HttpGet]
+        [HttpPost]
         public IActionResult Inventory()
         {
+            
             return View();
         }
 
