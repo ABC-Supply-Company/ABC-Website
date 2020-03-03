@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>aspnet-ABCSupplyCompany-AF91B8D8-23C1-45AD-B964-3F573E5C538E</UserSecretsId>
     <StartupObject>ABCSupplyCompany.Program</StartupObject>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
 
   <ItemGroup>

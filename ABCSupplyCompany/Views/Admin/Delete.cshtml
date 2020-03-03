@@ -1,0 +1,53 @@
+﻿@model InventoryItem
+@{
+    ViewData["Title"] = "Delete Inventory Item - ABC Supply Company";
+}
+<div class="jumbotron" style="text-align:center">
+    <h1>Delete Inventory Item - ABC Supply's Inventory</h1>
+</div>
+
+<style>
+    .input-validation-error {
+        border-color: red;
+    }
+</style>
+<h2>Are you sure You Want to Delete This Inventory Item?</h2>
+<form class="m-1 p-1" method="post">
+    <div class="form-group">
+        <label asp-for="id"></label>
+        <input asp-for="id" type="text" readonly class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="lottag_number"></label>
+        <input asp-for="lottag_number" type="text" readonly class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="lottag_description"></label>
+        <input asp-for="lottag_description" type="text" readonly class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="weight_net"></label>
+        <input asp-for="weight_net" type="text" readonly class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="on_hand_balance"></label>
+        <input asp-for="on_hand_balance" type="text" readonly class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="unit_of_measure"></label>
+        <input asp-for="unit_of_measure" type="text" readonly class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.CheckBox("active")
+        <label asp-for="active"></label>
+
+    </div>
+    
+    <button type="submit" class="btn btn-lg btn-light btn-outline-dark">Confirm Delete</button>
+    &nbsp;&nbsp;<a class="btn btn-lg btn-light btn-outline-dark" href="~/admin/index">Cancel</a>
+
+</form>

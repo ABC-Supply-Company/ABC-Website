@@ -1,0 +1,48 @@
+﻿@model InventoryItem
+@{
+    ViewData["Title"] = "Create New Inventory Item - ABC Supply Company";
+}
+<div class="jumbotron" style="text-align:center">
+    <h1>Create New Inventory Item</h1>
+</div>
+
+<style>
+    .input-validation-error {
+        border-color: red;
+    }
+</style>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form class="m-1 p-1" method="post">
+    <div class="form-group">
+        <label asp-for="lottag_number"></label>
+        <input asp-for="lottag_number" type="text" class="form-control" />
+        <span asp-validation-for="lottag_number" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="lottag_description"></label>
+        <input asp-for="lottag_description" type="text" class="form-control" />
+        <span asp-validation-for="lottag_description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="weight_net"></label>
+        <input asp-for="weight_net" type="number" class="form-control"  />
+        <span asp-validation-for="weight_net" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="on_hand_balance"></label>
+        <input asp-for="on_hand_balance" type="number" class="form-control" />
+        <span asp-validation-for="on_hand_balance" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="unit_of_measure"></label>
+        <input asp-for="unit_of_measure" type="text" class="form-control" />
+        <span asp-validation-for="unit_of_measure" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        @Html.CheckBox("active")
+        <label asp-for="active"></label>       
+
+    </div>
+    <button type="submit" class="btn btn-lg btn-light btn-outline-dark">Create</button>
+    &nbsp;&nbsp;<a class="btn btn-lg btn-light btn-outline-dark" href="~/admin/index">Cancel</a>
+</form>

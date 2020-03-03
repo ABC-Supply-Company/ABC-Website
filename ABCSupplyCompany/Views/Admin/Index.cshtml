@@ -1,17 +1,14 @@
-﻿@model IEnumerable<InventoryItem>
+﻿
+@model IEnumerable<InventoryItem>
 @{
-    ViewData["Title"] = "Inventory-ABC Supply Company";
+    ViewData["Title"] = "Manage Inventory-ABC Supply Company";
 }
-
-
-
-
 <div class="jumbotron" style="text-align:center">
-    <h1>Search ABC Supply's Inventory</h1>
+    <h1>Manage ABC Supply's Inventory</h1>
 </div>
 
 <div class="container">
-
+    <p><a class="btn btn-lg btn-light btn-outline-dark" href="~/admin/create">Create New Item</a></p>
     <table cellpadding="0" cellspacing="0" border="0" class="display" id="inventory" width="100%">
         <thead>
             <tr>
@@ -20,6 +17,10 @@
                 <th>Weight Net</th>
                 <th>On Hand Balance</th>
                 <th>Unit of Measure</th>
+                <th>Active</th>
+                <th>Update</th>
+                <th>Delete</th>
+
             </tr>
         </thead>
         <tbody>
@@ -27,27 +28,29 @@
 
             @if (Model == null)
             {
-                <tr>
-                    <td colspan="7" class="text-center">No Inventory Items Found</td>
-                </tr>
+            <tr>
+                <td colspan="7" class="text-center">No Inventory Items Found</td>
+            </tr>
             }
             else
             {
-                @foreach (var i in Model)
+            @foreach (var i in Model)
                 {
                     <tr>
                         <td>@i.lottag_number</td>
                         <td>@i.lottag_description</td>
                         <td>@i.weight_net</td>
                         <td>@i.on_hand_balance</td>
-                        <td>@i.unit_of_measure</td>                     
-   
-                           
+                        <td>@i.unit_of_measure</td>
+                        <td>@i.active</td>
+                        <td><a asp-action="Edit" asp-area="" asp-controller="Admin" asp-route-id="@i.id">Update</a></td>
+                        <td><a asp-action="Delete" asp-area="" asp-controller="Admin" asp-route-id="@i.id">Delete</a></td>
+                        
                     </tr>
                 }
             }
         </tbody>
-    </table> 
+    </table>
 
 </div>
 

@@ -5,8 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-
 using ABCSupplyCompany.Models;
+using ABCSupplyCompany.Repositories;
+using Microsoft.Extensions.Configuration;
 
 namespace ABCSupplyCompany.Controllers
 {
@@ -14,9 +15,11 @@ namespace ABCSupplyCompany.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+       public IConfiguration Configuration { get; }
+       public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            Configuration = configuration;
         }
 
         public IActionResult Index()
@@ -40,13 +43,13 @@ namespace ABCSupplyCompany.Controllers
         }
 
 
-        [Route("api/inventory")]
+        
         [HttpGet]
         [HttpPost]
         public IActionResult Inventory()
         {
-            
-            return View();
+            string connString = Configuration["ConnectionStrings:DefaultConnection"];
+            return View("Inventory", InventoryAction.GetAllInventoryItems(connString));
         }
 
         public IActionResult Contact()
